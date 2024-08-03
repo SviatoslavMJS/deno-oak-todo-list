@@ -15,11 +15,9 @@ body {
 button {
   font: inherit;
   cursor: pointer;
-  border: 1px solid purple;
-  color: white;
-  background: purple;
   padding: 0.5rem 1.5rem;
-  border-radius: 10px;
+  border: 1px solid rgb(0, 237, 100);
+  background-color: rgb(0, 104, 74);
 }
 
 button:focus {
@@ -28,6 +26,6 @@ button:focus {
 
 button:hover,
 button:active {
-  background: #a317a3;
-  border-color: #a317a3;
+  background: rgb(1, 121, 87);
+  border-color: rgb(0, 237, 100);
 }

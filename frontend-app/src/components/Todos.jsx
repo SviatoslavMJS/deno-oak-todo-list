@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { generatePath } from "react-router-dom";
 
-import { Routes, baseUrl } from "../constants/url";
+import { Routes, baseUrl } from "../constants/url.js";
 
 import "./Todos.css";
 
@@ -17,7 +17,9 @@ const Todos = () => {
 
   const getTodos = useCallback(async () => {
     try {
-      const response = await fetch(getUrl());
+      const response = await fetch(getUrl(), {
+        headers: { "Content-Type": "application/json" },
+      });
       const todosData = await response.json();
       setTodos(todosData.todos);
     } catch (err) {
@@ -83,8 +85,15 @@ const Todos = () => {
       <div className="todos__form">
         <form onSubmit={submitHandler}>
           <label>Todo Text</label>
-          <input type="text" value={enteredText} onChange={inputHandler} />
-          <button type="submit">{editedTodo ? "Edit" : "Add"} Todo</button>
+          <input
+            type="text"
+            placeholder="Enter text"
+            value={enteredText}
+            onChange={inputHandler}
+          />
+          <button disabled={!enteredText?.trim()} type="submit">
+            {editedTodo ? "Edit" : "Add"} Todo
+          </button>
         </form>
       </div>
       {todos && todos.length > 0 && (

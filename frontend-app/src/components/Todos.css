@@ -3,7 +3,8 @@
   margin: 3rem auto;
   width: 90%;
   max-width: 40rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgb(44, 114, 71);
+  background-color: rgba(89, 92, 92, 0.256);
   padding: 1rem;
 }
 
@@ -20,11 +21,22 @@
 
 .todos__form input {
   font: inherit;
-  border: 1px solid #ccc;
+  height: 30px;
+  padding: 8px;
+  outline: none;
+  color: rgba(255, 255, 255, 0.795);
+  background-color: rgb(31, 61, 67);
+  border: 1px solid rgb(38, 147, 83);
+  border-radius: 4px;
 }
 
 .todos__form input:focus {
-  border-color: purple;
+  background-color: rgb(49, 75, 81);
+  border: 1px solid rgb(1, 203, 85) !important;
+}
+
+.todos__form input::placeholder {
+  color: rgb(206, 220, 216);
 }
 
 .todos__list {
@@ -34,15 +46,16 @@
 .todos__list li {
   margin: 1rem auto;
   padding: 1rem;
-  border: 1px solid purple;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid rgb(26, 172, 87);
+  border-radius: 4px;
 }
 
 .todos__list span {
   font-weight: bold;
-  color: purple;
+  color: rgba(255, 255, 255, 0.795);
 }
 
 .todo__actions button {
